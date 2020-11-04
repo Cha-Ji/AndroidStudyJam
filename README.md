@@ -1,2 +1,5 @@
-# AndroidStudyJam
-Android Study Jam
+> 개발 환경
+
+- MacOS
+- Android Studio
+- Kotlin
