@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HappyNewYear</string>
+        <string name="month1">인절미</string>
+        <string name="month2">안개 속 개집</string>
+        <string name="month3">고등어</string>
+        <string name="month4">평화로운 우리집.</string>
+</resources>
