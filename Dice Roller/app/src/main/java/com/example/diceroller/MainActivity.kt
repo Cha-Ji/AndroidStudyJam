@@ -15,6 +15,11 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.button)
         rollButton.setOnClickListener {rollDice()}
         rollDice()
+
+        //reset button
+        val resetButton: Button = findViewById(R.id.resetButton)
+        resetButton.setOnClickListener {resetDice()}
+        resetDice()
     }
 
     private fun rollDice() {
@@ -36,6 +41,16 @@ class MainActivity : AppCompatActivity() {
         diceImage.setImageResource(drawableResource)
 
         diceImage.contentDescription = diceRoll.toString()
+
+    }
+
+    private fun resetDice(){
+        //reset dice to 0
+        val diceImage: ImageView = findViewById(R.id.imageView)
+        val drawableResource = R.drawable.empty_dice
+
+        diceImage.setImageResource(drawableResource)
+
 
     }
 }
