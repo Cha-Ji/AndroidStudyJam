@@ -1,4 +1,4 @@
-#Fri Jan 29 14:36:14 KST 2021
+#Fri Jan 29 15:40:48 KST 2021
 base.0=/Users/cha-ji/Git/AndroidStudyJam/DessertClicker-Starter/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
