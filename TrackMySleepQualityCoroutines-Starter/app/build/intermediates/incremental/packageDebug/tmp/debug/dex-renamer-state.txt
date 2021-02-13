@@ -1,0 +1,4 @@
+#Sun Feb 14 00:52:48 KST 2021
+base.0=/Users/cha-ji/Git/AndroidStudyJam/TrackMySleepQualityCoroutines-Starter/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
