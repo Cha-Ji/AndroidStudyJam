@@ -24,22 +24,26 @@ import androidx.lifecycle.viewModelScope
 import com.example.android.marsrealestate.network.MarsApiService
 import com.example.android.marsrealestate.network.MarsProperty
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.lang.Exception
 
 /**
  * The [ViewModel] that is attached to the [OverviewFragment].
  */
+enum class MarsApiStatus{LOADING, ERROR, DONE}
+
 class OverviewViewModel : ViewModel() {
 
     // The internal MutableLiveData String that stores the most recent response
-    private val _response = MutableLiveData<String>()
+    private val _properties = MutableLiveData<List<MarsProperty>>()
+    private val _status = MutableLiveData<MarsApiStatus>()
 
     // The external immutable LiveData for the response String
-    val response: LiveData<String>
-        get() = _response
+    val properties: LiveData<List<MarsProperty>>
+        get() = _properties
+
+    val status: LiveData<MarsApiStatus>
+        get() = _status
+
 
     /**
      * Call getMarsRealEstateProperties() on init so we can display status immediately.
@@ -52,27 +56,17 @@ class OverviewViewModel : ViewModel() {
      * Sets the value of the status LiveData to the Mars API status.
      */
     private fun getMarsRealEstateProperties() {
-        _response.value
         //coroutine
         viewModelScope.launch {
             try {
-                val listResult = MarsApiService.MarsApi.retrofitService.getProperties()
-                _response.value = "Success: ${listResult.size} Mars properties retrieved"
+                _properties.value = MarsApiService.MarsApi.retrofitService.getProperties()
+                _status.value = MarsApiStatus.DONE
             }catch (e: Exception){
-                _response.value = "Failure: ${e.message}"
+                _status.value = MarsApiStatus.ERROR
+                _properties.value = ArrayList()
             }
         }
 
-//        MarsApiService.MarsApi.retrofitService.getProperties().enqueue(
-//                object: Callback<List<MarsProperty>> {
-//                    override fun onResponse(call: Call<List<MarsProperty>>, response: Response<List<MarsProperty>>) {
-//                        _response.value = "Success: ${response.body()?.size} Mars properties retrieved"
-//                    }
-//
-//                    override fun onFailure(call: Call<List<MarsProperty>>, t: Throwable) {
-//                        _response.value = "Failure: " + t.message
-//                    }
-//                })
     }
 
 
