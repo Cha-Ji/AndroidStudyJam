@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/cha-ji/Git/AndroidStudyJam/DevBytesRepository/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/devbyte_item.xml",
+        "source": "/Users/cha-ji/Git/AndroidStudyJam/DevBytesRepository/app/src/main/res/layout/devbyte_item.xml"
+    },
+    {
+        "merged": "/Users/cha-ji/Git/AndroidStudyJam/DevBytesRepository/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_dev_byte.xml",
+        "source": "/Users/cha-ji/Git/AndroidStudyJam/DevBytesRepository/app/src/main/res/layout/fragment_dev_byte.xml"
+    }
+]
